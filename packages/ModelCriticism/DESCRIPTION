@@ -1,0 +1,10 @@
+Package: ModelCriticism
+Title: Model Comparison for Evaluating Forecasts
+Version: 0.1
+Authors@R: c(
+    person("Michael", "Colaresi", email = "colaresi@msu.com", role = c("aut")),
+    person("Zuhaib", "Mahmood", email = "mahmoo21@msu.com", role = c("cre","aut")))
+Description: This package includes tools for comparing, criticizing, and evaluating forecasting models.
+Depends: R (>= 3.2.3)
+LazyData: true
+RoxygenNote: 5.0.1.9000

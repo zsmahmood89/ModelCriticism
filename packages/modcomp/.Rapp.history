@@ -1,0 +1,975 @@
+n<-rnorm(5,mean=0,sd=1)
+hist(n)
+mlemodel<-lm(y~n)
+library('optim')
+install.package(optim)
+install.packages(optim)
+install.packages('optim')
+install.packages('optimx')
+library(optim)
+library(optimx)
+library(mle2)
+library(mle)
+install.packages('mle')
+install.packages('mle2')
+install.packages('maxLik')
+library(maxLik)
+lkfunction<-function(param) {#
+	mu<-param[1]#
+	sigma<-param[2]#
+	sum(dnorm(n,mean=mu,sd=sigma,log=TRUE))#
+}
+mle<-maxLik(logLik = lkfunction,start=c(mu=0,sigma=1))
+warnings()
+summary(mle)
+coef<-coef(mle)#
+muhat<-coef[mu]#
+sigmahat<-coef[sigma]
+coef<-coef(mle)#
+muhat<-coef[0]#
+sigmahat<-coef[1]
+muhat
+print muhat
+coef<-coef(mle)#
+muhat<-coef[['mu']]#
+sigmahat<-coef[['sigma']]
+muhat
+sigmahat
+stder<-stdEr(mle)
+scatter(n)
+line(n)
+hist(n)
+mean(n)
+list(n)
+X<-cbind(1,runif(samplesize))#
+y<-n#
+ols<-lm(y~X[,2])#
+sigmahat_ols<-sqrt(deviance(ols)/(samplesize-ols$rank))
+samplesize<-5
+X<-cbind(1,runif(samplesize))#
+y<-n#
+ols<-lm(y~X[,2])#
+sigmahat_ols<-sqrt(deviance(ols)/(samplesize-ols$rank))
+sigmahat_ols
+summary(ols)
+ols<-lm(y~X)
+summary(ols)
+ols<-lm(y~X[,2])
+summary(ols)
+#estimate mu and sigma by OLS#
+X<-cbind(1,runif(samplesize))#
+y<-n#
+ols<-lm(y~X[,2])#
+sigmahat_ols<-sqrt(deviance(ols)/(samplesize-ols$rank))#
+sigmahat_ols#
+summary(ols)
+ols<-lm(y~X[, 2])
+summary(ols)
+samplesize<-5
+X<-cbind(1,runif(samplesize))#
+y<-n#
+ols<-lm(y~X[, 2])#
+sigmahat_ols<-sqrt(deviance(ols)/(samplesize-ols$rank))#
+sigmahat_ols
+X<-cbind(1,runif(samplesize))#
+y<-n#
+ols<-lm(y~X[, 2])#
+summary(ols)
+ls()
+rm('X','y','sigmahat_ols','ols')
+X<-cbind(1,runif(samplesize))#
+y<-n#
+ols<-lm(y~X[, 2])#
+summary(ols)
+rm('X','y','sigmahat_ols','ols')
+#estimate mu and sigma by OLS#
+x<-[1,1,1,1,1]#
+y<-n#
+ols<-lm(y~x)
+x<-cbind[1,1,1,1,1]#
+y<-n#
+ols<-lm(y~x)
+x<-cbind(1,1,1,1,1)#
+y<-n#
+ols<-lm(y~x)
+n
+y<-n#
+ols<-lm(y~1)
+summary(ols)
+ols<-lm(y~1)
+summary(ols)
+sigmahat_ols<-sqrt(deviance(ols)/(samplesize-ols$rank))
+sigmahat_ols
+ols<-lm(y~1)
+summary(ols)
+sigmahat_ols<-sqrt(deviance(ols)/(samplesize-ols$rank))
+sigmahat_ols
+sqerror<-(sigmahat_ols-1)^2
+sqerror
+summary(ols)
+summary(mle)
+summary(ols)
+coef(ols)
+stdEr(ols)
+n=c(400,450,575,600,625)
+library(maxLik)
+mle<-maxLik(logLik=fn,start=c(mu=550,sigma=50))
+fn<-function(param) {#
+	mu<-param[1]#
+	sigma<-param[2]#
+	sum(dnorm(n,mean=mu,sd=sigma,log=TRUE))#
+}
+mle<-maxLik(logLik=fn,start=c(mu=550,sigma=50))
+summary(mle)
+mle<-maxLik(logLik=fn,start=c(mu=550,sigma=50),method='BFGS')
+summary(mle)
+n=c(400,450,575,600,625)#
+#
+#install.packages('maxLik')#
+library(maxLik)#
+#
+fn<-function(param) {#
+	mu<-param[1]#
+	sigma<-param[2]#
+	sum(dnorm(n,mean=mu,sd=sigma,log=TRUE))#
+}#
+#
+mle<-maxLik(logLik=fn,start=c(mu=500,sigma=100),method='BFGS')#
+summary(mle)
+n=c(400,450,575,600,625)#
+#
+#install.packages('maxLik')#
+library(maxLik)#
+#
+fn<-function(param) {#
+	mu<-param[1]#
+	sigma<-param[2]#
+	sum(dnorm(n,mean=mu,sd=sigma,log=TRUE))#
+}#
+#
+mle<-maxLik(logLik=fn,start=c(mu=550,sigma=50),method='BFGS')#
+summary(mle)
+n=c(400,450,575,600,625)#
+#
+#install.packages('maxLik')#
+library(maxLik)#
+#
+fn<-function(param) {#
+	mu<-param[1]#
+	sigma<-param[2]#
+	sum(dnorm(n,mean=mu,sd=sigma,log=TRUE))#
+}#
+#
+mle<-maxLik(logLik=fn,method='BFGS')#
+summary(mle)
+ls
+ls()
+setwd(~/Desktop)
+setwd(Users/Z)
+setwd('Users/Z')
+update
+update()
+updateR()
+updateR
+update.R
+update
+??update
+??somer
+??somer2
+somers2
+somers2()
+somers2
+library(Hmisc)
+exit
+quit()
+#Code to try out megaphone plot#
+library(ggplot2)#
+library(dplyr)#
+#
+RandomData <- function(n=100, raw_mean = -1, noise_sd=1) {#
+	#Function to generate random data with f,y, and labels#
+	#inputs:#
+	#   n        : number of values desired#
+	#   raw_mean : mean of input to forecasts (untransformed)#
+	#   noise_sd : noise of how forecast is turned into actual (higher is worse forecast)#
+	#   p        : proportion of actual outcomes you want to be 1#
+	#output:#
+	#   n by 3 data.frame with columns#
+	#		f is forecast (numeric)#
+	#       y is actual (numeric)#
+	#       labels is labels (string)#
+#
+	#generate n realizations of ystar and transform to probability scale#
+	#using inverse logistic#
+	ystar <- rnorm(mean=raw_mean ,n=n)#
+	f <- plogis(ystar)#
+	y <- rbinom(n,1,p=plogis(ystar+rnorm(n=n,sd=noise_sd)))#
+	raw_labels <- c(letters,LETTERS,month.abb)#
+	labels <- raw_labels[1]#
+	for (i in 2:n) {#
+		#Use modulus to recycle letters/labels#
+		j <- i %% length(raw_labels) #
+		if (j==0) {#
+			labels<-c(labels,raw_labels[length(raw_labels)])#
+		} else {#
+			labels<-c(labels,raw_labels[j+1])#
+		}#
+	}#
+	return(data.frame(f=f, y=y,labels=labels))#
+}#
+MegaPlot <- function(f, y, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  y      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, y=y, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=y-f) %>% group_by(y) %>% arrange(abs(y_minus_f)) %>% mutate(errorOrderWithinClass = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$errorOrderWithinClass)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(split_it*(-worstN:-1), split_it*(1:worstN))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,errorOrderWithinClass) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=errorOrderWithinClass,y=y_minus_f,group=y, color=as.factor(y)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) #
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) + ylim(c(-1,1))+ xlim(c(0,max(pdata$errorOrderWithinClass+padding)))#
+	return(o3)#
+}#
+#
+MegaPlot2 <- function(f, y, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  y      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, y=y, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=y-f) %>% arrange(f) %>% mutate(forecastOrder = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$forecastOrder)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(-1+split_it*(1:worstN), 1 - split_it*(worstN:1))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,forecastOrder) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=forecastOrder,y=y_minus_f,group=y, color=as.factor(y)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) + geom_hline(y=0, color="black")+geom_rug(side="b")#
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) +labs(x="Forecasts (order)",y="y - f") + ylim(c(-1,1))+ xlim(c(0,max(pdata$forecastOrder+padding)))+ theme_bw() + theme(legend.position="none")#
+	return(o3)#
+}#
+#
+data1 <- RandomData()#
+test <- MegaPlot2(f=data1$f, y=data1$y, labels=data1$labels, worstN=10)#
+test
+test <- MegaPlot(f=data1$f, y=data1$y, labels=data1$labels, worstN=10)#
+test
+MegaPlot2 <- function(f, obs, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  obs      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, obs=obs, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=obs-f) %>% arrange(f) %>% mutate(forecastOrder = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$forecastOrder)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(-1+split_it*(1:worstN), 1 - split_it*(worstN:1))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,forecastOrder) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=forecastOrder,y=y_minus_f,group=obs, color=as.factor(obs)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) + geom_hline(y=0, color="black")+geom_rug(side="b")#
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) +labs(x="Forecasts (order)",y="y - f") + ylim(c(-1,1))+ xlim(c(0,max(pdata$forecastOrder+padding)))+ theme_bw() + theme(legend.position="none")#
+	return(o3)#
+}
+test <- MegaPlot2(f=data1$f, obs=data1$y, labels=data1$labels, worstN=10)
+test <- MegaPlot2(f=data1$f, obs=data1$obs, labels=data1$labels, worstN=10)
+data
+MegaPlot2 <- function(f, obs, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  obs      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, y=obs, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=obs-f) %>% arrange(f) %>% mutate(forecastOrder = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$forecastOrder)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(-1+split_it*(1:worstN), 1 - split_it*(worstN:1))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,forecastOrder) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=forecastOrder,y=y_minus_f,group=obs, color=as.factor(obs)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) + geom_hline(y=0, color="black")+geom_rug(side="b")#
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) +labs(x="Forecasts (order)",y="y - f") + ylim(c(-1,1))+ xlim(c(0,max(pdata$forecastOrder+padding)))+ theme_bw() + theme(legend.position="none")#
+	return(o3)#
+}#
+#
+data1 <- RandomData()#
+test <- MegaPlot2(f=data1$f, obs=data1$obs, labels=data1$labels, worstN=10)#
+test
+MegaPlot2 <- function(f, obs, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  obs      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, obs=y, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=obs-f) %>% arrange(f) %>% mutate(forecastOrder = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$forecastOrder)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(-1+split_it*(1:worstN), 1 - split_it*(worstN:1))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,forecastOrder) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=forecastOrder,y=y_minus_f,group=obs, color=as.factor(obs)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) + geom_hline(y=0, color="black")+geom_rug(side="b")#
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) +labs(x="Forecasts (order)",y="y - f") + ylim(c(-1,1))+ xlim(c(0,max(pdata$forecastOrder+padding)))+ theme_bw() + theme(legend.position="none")#
+	return(o3)#
+}#
+#
+data1 <- RandomData()#
+test <- MegaPlot2(f=data1$f, obs=data1$obs, labels=data1$labels, worstN=10)#
+test
+RandomData <- function(n=100, raw_mean = -1, noise_sd=1) {#
+	#Function to generate random data with f,y, and labels#
+	#inputs:#
+	#   n        : number of values desired#
+	#   raw_mean : mean of input to forecasts (untransformed)#
+	#   noise_sd : noise of how forecast is turned into actual (higher is worse forecast)#
+	#   p        : proportion of actual outcomes you want to be 1#
+	#output:#
+	#   n by 3 data.frame with columns#
+	#		f is forecast (numeric)#
+	#       y is actual (numeric)#
+	#       labels is labels (string)#
+#
+	#generate n realizations of ystar and transform to probability scale#
+	#using inverse logistic#
+	ystar <- rnorm(mean=raw_mean ,n=n)#
+	f <- plogis(ystar)#
+	obs <- rbinom(n,1,p=plogis(ystar+rnorm(n=n,sd=noise_sd)))#
+	raw_labels <- c(letters,LETTERS,month.abb)#
+	labels <- raw_labels[1]#
+	for (i in 2:n) {#
+		#Use modulus to recycle letters/labels#
+		j <- i %% length(raw_labels) #
+		if (j==0) {#
+			labels<-c(labels,raw_labels[length(raw_labels)])#
+		} else {#
+			labels<-c(labels,raw_labels[j+1])#
+		}#
+	}#
+	return(data.frame(f=f, y=y,labels=labels))#
+}
+MegaPlot2 <- function(f, obs, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  obs      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, obs=obs, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=obs-f) %>% arrange(f) %>% mutate(forecastOrder = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$forecastOrder)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(-1+split_it*(1:worstN), 1 - split_it*(worstN:1))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,forecastOrder) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=forecastOrder,y=y_minus_f,group=obs, color=as.factor(obs)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) + geom_hline(y=0, color="black")+geom_rug(side="b")#
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) +labs(x="Forecasts (order)",y="y - f") + ylim(c(-1,1))+ xlim(c(0,max(pdata$forecastOrder+padding)))+ theme_bw() + theme(legend.position="none")#
+	return(o3)#
+}
+test <- MegaPlot2(f=data1$f, obs=data1$obs, labels=data1$labels, worstN=10)
+data <- data.frame(f=f, obs=obs, labels=labels)
+MegaPlot2 <- function(f, obs, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  obs      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, obs=obs, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=obs-f) %>% arrange(f) %>% mutate(forecastOrder = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$forecastOrder)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(-1+split_it*(1:worstN), 1 - split_it*(worstN:1))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,forecastOrder) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=forecastOrder,y=y_minus_f,group=obs, color=as.factor(obs)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) + geom_hline(y=0, color="black")+geom_rug(side="b")#
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) +labs(x="Forecasts (order)",y="y - f") + ylim(c(-1,1))+ xlim(c(0,max(pdata$forecastOrder+padding)))+ theme_bw() + theme(legend.position="none")#
+	return(o3)#
+}#
+#
+data1 <- RandomData()#
+test <- MegaPlot2(f=data1$f, obs=data1$obs, labels=data1$labels, worstN=10)#
+test
+data.frame(f=data1$f,obs=data1$obs,labels=data1$labels,worstN=10)
+data1
+data.frame(f=data1$f,obs=data1$y,labels=data1$labels,worstN=10)
+df<-data.frame(f=data1$f,obs=data1$y,labels=data1$labels,worstN=10)
+test <- MegaPlot2(f=data1$f, obs=data1$y, labels=data1$labels, worstN=10)
+data1
+test <- MegaPlot2(f=data1$f, obs=data1$y, labels=data1$labels, worstN=10)
+MegaPlot2 <- function(f, obs, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  obs      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, obs=obs, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=obs-f) %>% arrange(f) %>% mutate(forecastOrder = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$forecastOrder)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(-1+split_it*(1:worstN), 1 - split_it*(worstN:1))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,forecastOrder) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=forecastOrder,y=y_minus_f,group=obs, color=as.factor(obs)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) + geom_hline(y=0, color="black")+geom_rug(side="b")#
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) +labs(x="Forecasts (order)",y="y - f") + ylim(c(-1,1))+ xlim(c(0,max(pdata$forecastOrder+padding)))+ theme_bw() + theme(legend.position="none")#
+	return(o3)#
+}
+RandomData <- function(n=100, raw_mean = -1, noise_sd=1) {#
+	#Function to generate random data with f,y, and labels#
+	#inputs:#
+	#   n        : number of values desired#
+	#   raw_mean : mean of input to forecasts (untransformed)#
+	#   noise_sd : noise of how forecast is turned into actual (higher is worse forecast)#
+	#   p        : proportion of actual outcomes you want to be 1#
+	#output:#
+	#   n by 3 data.frame with columns#
+	#		f is forecast (numeric)#
+	#       y is actual (numeric)#
+	#       labels is labels (string)#
+#
+	#generate n realizations of ystar and transform to probability scale#
+	#using inverse logistic#
+	ystar <- rnorm(mean=raw_mean ,n=n)#
+	f <- plogis(ystar)#
+	y <- rbinom(n,1,p=plogis(ystar+rnorm(n=n,sd=noise_sd)))#
+	raw_labels <- c(letters,LETTERS,month.abb)#
+	labels <- raw_labels[1]#
+	for (i in 2:n) {#
+		#Use modulus to recycle letters/labels#
+		j <- i %% length(raw_labels) #
+		if (j==0) {#
+			labels<-c(labels,raw_labels[length(raw_labels)])#
+		} else {#
+			labels<-c(labels,raw_labels[j+1])#
+		}#
+	}#
+	return(data.frame(f=f, y=y,labels=labels))#
+}
+test <- MegaPlot2(f=data1$f, obs=data1$y, labels=data1$labels, worstN=10)
+RandomData <- function(n=100, raw_mean = -1, noise_sd=1) {#
+	#Function to generate random data with f,y, and labels#
+	#inputs:#
+	#   n        : number of values desired#
+	#   raw_mean : mean of input to forecasts (untransformed)#
+	#   noise_sd : noise of how forecast is turned into actual (higher is worse forecast)#
+	#   p        : proportion of actual outcomes you want to be 1#
+	#output:#
+	#   n by 3 data.frame with columns#
+	#		f is forecast (numeric)#
+	#       y is actual (numeric)#
+	#       labels is labels (string)#
+#
+	#generate n realizations of ystar and transform to probability scale#
+	#using inverse logistic#
+	ystar <- rnorm(mean=raw_mean ,n=n)#
+	f <- plogis(ystar)#
+	y <- rbinom(n,1,p=plogis(ystar+rnorm(n=n,sd=noise_sd)))#
+	raw_labels <- c(letters,LETTERS,month.abb)#
+	labels <- raw_labels[1]#
+	for (i in 2:n) {#
+		#Use modulus to recycle letters/labels#
+		j <- i %% length(raw_labels) #
+		if (j==0) {#
+			labels<-c(labels,raw_labels[length(raw_labels)])#
+		} else {#
+			labels<-c(labels,raw_labels[j+1])#
+		}#
+	}#
+	return(data.frame(f=f, y=y,labels=labels))#
+}
+MegaPlot2 <- function(f, obs, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  obs      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, obs=obs, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=obs-f) %>% arrange(f) %>% mutate(forecastOrder = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$forecastOrder)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(-1+split_it*(1:worstN), 1 - split_it*(worstN:1))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,forecastOrder) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=forecastOrder,y=y_minus_f,group=obs, color=as.factor(obs)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) + geom_hline(y=0, color="black")+geom_rug(side="b")#
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) +labs(x="Forecasts (order)",y="y - f") + ylim(c(-1,1))+ xlim(c(0,max(pdata$forecastOrder+padding)))+ theme_bw() + theme(legend.position="none")#
+	return(o3)#
+}
+test <- MegaPlot2(f=data1$f, obs=data1$y, labels=data1$labels, worstN=10)
+data1$y
+#Code to try out megaphone plot#
+library(ggplot2)#
+library(dplyr)#
+#
+RandomData <- function(n=100, raw_mean = -1, noise_sd=1) {#
+	#Function to generate random data with f,y, and labels#
+	#inputs:#
+	#   n        : number of values desired#
+	#   raw_mean : mean of input to forecasts (untransformed)#
+	#   noise_sd : noise of how forecast is turned into actual (higher is worse forecast)#
+	#   p        : proportion of actual outcomes you want to be 1#
+	#output:#
+	#   n by 3 data.frame with columns#
+	#		f is forecast (numeric)#
+	#       y is actual (numeric)#
+	#       labels is labels (string)#
+#
+	#generate n realizations of ystar and transform to probability scale#
+	#using inverse logistic#
+	ystar <- rnorm(mean=raw_mean ,n=n)#
+	f <- plogis(ystar)#
+	y <- rbinom(n,1,p=plogis(ystar+rnorm(n=n,sd=noise_sd)))#
+	raw_labels <- c(letters,LETTERS,month.abb)#
+	labels <- raw_labels[1]#
+	for (i in 2:n) {#
+		#Use modulus to recycle letters/labels#
+		j <- i %% length(raw_labels) #
+		if (j==0) {#
+			labels<-c(labels,raw_labels[length(raw_labels)])#
+		} else {#
+			labels<-c(labels,raw_labels[j+1])#
+		}#
+	}#
+	return(data.frame(f=f, y=y,labels=labels))#
+}#
+MegaPlot <- function(f, y, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  y      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, y=y, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=y-f) %>% group_by(y) %>% arrange(abs(y_minus_f)) %>% mutate(errorOrderWithinClass = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$errorOrderWithinClass)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(split_it*(-worstN:-1), split_it*(1:worstN))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,errorOrderWithinClass) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=errorOrderWithinClass,y=y_minus_f,group=y, color=as.factor(y)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) #
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) + ylim(c(-1,1))+ xlim(c(0,max(pdata$errorOrderWithinClass+padding)))#
+	return(o3)#
+}#
+#
+MegaPlot2 <- function(f, y, labels, worstN=10, padding=20) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  y      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, y=y, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=y-f) %>% arrange(f) %>% mutate(forecastOrder = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), ""))#
+	#for list of worst cases on right side, need x and y-values#
+	#first get max and min of y, and split into increments for each label (worstN * 2) labels#
+	#  plus add one for the middle to ad white space between the y==1 and y==0 labels#
+	split_it <- (max(pdata$y_minus_f)-min(pdata$y_minus_f))/(worstN*2+1)#
+	#now, lowest worstN values (most negative), stack up from bottow at each increment of split_it must be negative for these#
+	#  then highest worstN values stacked up from 0 point on graph#
+	List_xpos  <- rep(max(pdata$forecastOrder)+padding-(padding/2),2*worstN)#
+	#0 is empty so does not need to be in dataframe (we count up from bottom towards zero, and from 1 to max, skipping zero)#
+	List_ypos  <- c(-1+split_it*(1:worstN), 1 - split_it*(worstN:1))#
+	List_Df <- pdata %>% arrange(y_minus_f) %>% filter(label_worst!="") %>% select(label_worst,y_minus_f,forecastOrder) %>% data.frame()  #
+	List_Df$xpos <- List_xpos#
+	List_Df$ypos <- List_ypos#
+	o1 <- ggplot(pdata, aes(x=forecastOrder,y=y_minus_f,group=y, color=as.factor(y)))#
+	o2 <- o1 + geom_point(alpha=.5, size=1) +geom_text(aes(label=label_worst,size=abs(y_minus_f), hjust=0, vjust=0, angle=0)) + geom_hline(y=0, color="black")+geom_rug(side="b")#
+	o3 <- o2 + geom_text(data=List_Df, aes(label=label_worst, x=xpos, y=ypos,size=abs(y_minus_f))) +labs(x="Forecasts (order)",y="y - f") + ylim(c(-1,1))+ xlim(c(0,max(pdata$forecastOrder+padding)))+ theme_bw() + theme(legend.position="none")#
+	return(o3)#
+}#
+#
+data1 <- RandomData()#
+test <- MegaPlot2(f=data1$f, y=data1$y, labels=data1$labels, worstN=10)#
+test
+library(ggplot2)#
+library(dplyr)#
+library(grid)#
+#
+RandomData <- function(n=100, raw_mean = -1, noise_sd=1) {#
+	#Function to generate random data with f,y, and labels#
+	#inputs:#
+	#   n        : number of values desired#
+	#   raw_mean : mean of input to forecasts (untransformed)#
+	#   noise_sd : noise of how forecast is turned into actual (higher is worse forecast)#
+	#   p        : proportion of actual outcomes you want to be 1#
+	#output:#
+	#   n by 3 data.frame with columns#
+	#		f is forecast (numeric)#
+	#       y is actual (numeric)#
+	#       labels is labels (string)#
+#
+	#generate n realizations of ystar and transform to probability scale#
+	#using inverse logistic#
+	ystar <- rnorm(mean=raw_mean ,n=n)#
+	f <- plogis(ystar)#
+	y <- rbinom(n,1,p=plogis(ystar+rnorm(n=n,sd=noise_sd)))#
+	raw_labels <- c(letters,LETTERS,month.abb)#
+	labels <- raw_labels[1]#
+	for (i in 2:n) {#
+		#Use modulus to recycle letters/labels#
+		j <- i %% length(raw_labels) #
+		if (j==0) {#
+			labels<-c(labels,raw_labels[length(raw_labels)])#
+		} else {#
+			labels<-c(labels,raw_labels[j+1])#
+		}#
+	}#
+	return(data.frame(f=f, y=y,labels=labels))#
+}
+data
+max(data1$f)
+data1 <- RandomData()
+max(data1$f)
+#Code to try out megaphone plot#
+library(ggplot2)#
+library(dplyr)#
+library(grid)#
+#
+RandomData <- function(n=100, raw_mean = -1, noise_sd=1) {#
+	#Function to generate random data with f,y, and labels#
+	#inputs:#
+	#   n        : number of values desired#
+	#   raw_mean : mean of input to forecasts (untransformed)#
+	#   noise_sd : noise of how forecast is turned into actual (higher is worse forecast)#
+	#   p        : proportion of actual outcomes you want to be 1#
+	#output:#
+	#   n by 3 data.frame with columns#
+	#		f is forecast (numeric)#
+	#       y is actual (numeric)#
+	#       labels is labels (string)#
+#
+	#generate n realizations of ystar and transform to probability scale#
+	#using inverse logistic#
+	ystar <- rnorm(mean=raw_mean ,n=n)#
+	f <- plogis(ystar)#
+	y <- rbinom(n,1,p=plogis(ystar+rnorm(n=n,sd=noise_sd)))#
+	raw_labels <- c(letters,LETTERS,month.abb)#
+	labels <- raw_labels[1]#
+	for (i in 2:n) {#
+		#Use modulus to recycle letters/labels#
+		j <- i %% length(raw_labels) #
+		if (j==0) {#
+			labels<-c(labels,raw_labels[length(raw_labels)])#
+		} else {#
+			labels<-c(labels,raw_labels[j+1])#
+		}#
+	}#
+	return(data.frame(f=f, y=y,labels=labels))#
+}
+MegaPlot5 <- function(f, y, labels, worstN=10, padding=10,xmin_lab=1.20,xmax_lab=1.40) {#
+	#Function to create mega phone plot#
+	#input:#
+	#  f      : name in dataframe of N by 1 vector of forecasts f_{i} in (0,1)#
+	#  y      : name in dataframe of N by 1 vector of forecasts y_{i} is 0 or 1#
+	#  labels : name in dataframe of N by 1 vector of textual labels (strings)#
+	#  worstN : How many values to label, these will be worst for each class#
+	#  padding: padding for list of worst misses on the right of the plot (increase if cut-off)#
+	#        #
+	#output:#
+	#  ggplot megaphone object#
+	data <- data.frame(f=f, y=y, labels=labels)#
+	pdata <- data %>% mutate(y_minus_f=y-f) %>% arrange(f) %>% mutate(forecastOrder = row_number())#
+	#still need to label worstN#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(label_worst=ifelse(row_number()<=worstN, as.character(labels), " "))#
+	#need to create var for absolute errors#
+	pdata<-pdata%>%mutate(abserr=abs(y_minus_f))#
+	#create indicator for worst values#
+	pdata <- pdata %>% group_by(y) %>% arrange(desc(abs(y_minus_f))) %>% mutate(isworstn=ifelse(row_number()<=worstN, 1, 0))#
+	#arrange data for plotting#
+	pdata<-pdata%>%arrange(forecastOrder)#
+	o1 <- ggplot(pdata, aes(x=f,y=forecastOrder,group=y, color=as.factor(y)))#
+	o2 <- o1 + geom_point(aes(alpha=(isworstn)))  +geom_rug(side="r")+xlim(c(0,1))+theme(legend.position='none',plot.margin=unit(c(1,padding,1,1),"lines"))+ labs(x='Forecast Value',y='Observation (ordered by f)')#
+	z<-o2#
+	for (i in 1:length(pdata$label_worst)) {#
+		labeltext<-pdata$label_worst[i]#
+		if(labeltext == ' '){#
+			next#
+		}#
+		xtext<-ifelse(i%%2==0,xmin_lab,xmax_lab)#
+		ycolor<-ifelse(pdata$y[i]==0,'red','blue')#
+		current<-#
+			z+annotation_custom(#
+			grob=textGrob(label=labeltext,#
+				gp=gpar(fontsize=10,col=ycolor)),#
+			ymin=pdata$forecastOrder[i],#
+			ymax=pdata$forecastOrder[i],#
+			xmin=xtext,#
+			xmax=xtext)#
+		z<-current#
+		}#
+	#Turn off "clipping" so you can render the plot#
+	gt <- ggplot_gtable(ggplot_build(z))#
+	gt$layout$clip[gt$layout$name == "panel"] <- "off"#
+	o3<-grid.draw(gt)#
+	return(o3)#
+}
+data1 <- RandomData()#
+test <- MegaPlot5(f=data1$f, y=data1$y, labels=data1$labels, worstN=10,padding=10)#
+test
+RandomData <- function(n=1000, raw_mean = -1, noise_sd=1) {#
+	#Function to generate random data with f,y, and labels#
+	#inputs:#
+	#   n        : number of values desired#
+	#   raw_mean : mean of input to forecasts (untransformed)#
+	#   noise_sd : noise of how forecast is turned into actual (higher is worse forecast)#
+	#   p        : proportion of actual outcomes you want to be 1#
+	#output:#
+	#   n by 3 data.frame with columns#
+	#		f is forecast (numeric)#
+	#       y is actual (numeric)#
+	#       labels is labels (string)#
+#
+	#generate n realizations of ystar and transform to probability scale#
+	#using inverse logistic#
+	ystar <- rnorm(mean=raw_mean ,n=n)#
+	f <- plogis(ystar)#
+	y <- rbinom(n,1,p=plogis(ystar+rnorm(n=n,sd=noise_sd)))#
+	raw_labels <- c(letters,LETTERS,month.abb)#
+	labels <- raw_labels[1]#
+	for (i in 2:n) {#
+		#Use modulus to recycle letters/labels#
+		j <- i %% length(raw_labels) #
+		if (j==0) {#
+			labels<-c(labels,raw_labels[length(raw_labels)])#
+		} else {#
+			labels<-c(labels,raw_labels[j+1])#
+		}#
+	}#
+	return(data.frame(f=f, y=y,labels=labels))#
+}
+data1 <- RandomData()#
+test <- MegaPlot5(f=data1$f, y=data1$y, labels=data1$labels, worstN=10,padding=10)#
+test
+RandomData <- function(n=750, raw_mean = -1, noise_sd=1) {#
+	#Function to generate random data with f,y, and labels#
+	#inputs:#
+	#   n        : number of values desired#
+	#   raw_mean : mean of input to forecasts (untransformed)#
+	#   noise_sd : noise of how forecast is turned into actual (higher is worse forecast)#
+	#   p        : proportion of actual outcomes you want to be 1#
+	#output:#
+	#   n by 3 data.frame with columns#
+	#		f is forecast (numeric)#
+	#       y is actual (numeric)#
+	#       labels is labels (string)#
+#
+	#generate n realizations of ystar and transform to probability scale#
+	#using inverse logistic#
+	ystar <- rnorm(mean=raw_mean ,n=n)#
+	f <- plogis(ystar)#
+	y <- rbinom(n,1,p=plogis(ystar+rnorm(n=n,sd=noise_sd)))#
+	raw_labels <- c(letters,LETTERS,month.abb)#
+	labels <- raw_labels[1]#
+	for (i in 2:n) {#
+		#Use modulus to recycle letters/labels#
+		j <- i %% length(raw_labels) #
+		if (j==0) {#
+			labels<-c(labels,raw_labels[length(raw_labels)])#
+		} else {#
+			labels<-c(labels,raw_labels[j+1])#
+		}#
+	}#
+	return(data.frame(f=f, y=y,labels=labels))#
+}
+data1 <- RandomData()#
+test <- MegaPlot5(f=data1$f, y=data1$y, labels=data1$labels, worstN=10,padding=10)
+RandomData <- function(n=500, raw_mean = -1, noise_sd=1) {
+RandomData <- function(n=500, raw_mean = -1, noise_sd=1) {#
+	#Function to generate random data with f,y, and labels#
+	#inputs:#
+	#   n        : number of values desired#
+	#   raw_mean : mean of input to forecasts (untransformed)#
+	#   noise_sd : noise of how forecast is turned into actual (higher is worse forecast)#
+	#   p        : proportion of actual outcomes you want to be 1#
+	#output:#
+	#   n by 3 data.frame with columns#
+	#		f is forecast (numeric)#
+	#       y is actual (numeric)#
+	#       labels is labels (string)#
+#
+	#generate n realizations of ystar and transform to probability scale#
+	#using inverse logistic#
+	ystar <- rnorm(mean=raw_mean ,n=n)#
+	f <- plogis(ystar)#
+	y <- rbinom(n,1,p=plogis(ystar+rnorm(n=n,sd=noise_sd)))#
+	raw_labels <- c(letters,LETTERS,month.abb)#
+	labels <- raw_labels[1]#
+	for (i in 2:n) {#
+		#Use modulus to recycle letters/labels#
+		j <- i %% length(raw_labels) #
+		if (j==0) {#
+			labels<-c(labels,raw_labels[length(raw_labels)])#
+		} else {#
+			labels<-c(labels,raw_labels[j+1])#
+		}#
+	}#
+	return(data.frame(f=f, y=y,labels=labels))#
+}
+}
+RandomData <- function(n=500, raw_mean = -1, noise_sd=1) {
+}
+test <- MegaPlot5(f=data1$f, y=data1$y, labels=data1$labels, worstN=10,padding=10)
+test
+install.packages('rjags')
+library(modcomp)
+DiagPlot()
+?DiagPlot()
+BisepPlot()
+setwd('/Users/Z/Dropbox/Z/Michigan State 2013/2015-2016/Winter 2015/mcpaper/CODE/modcomp/')
+library(devtools)
+check()

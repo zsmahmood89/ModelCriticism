@@ -1,0 +1,11 @@
+Package: modcomp
+Title: Model Comparison For Evaluating Forecasts
+Version: 0.1
+Authors@R: c(
+    person("Michael", "Colaresi", email = "colaresi@msu.com", role = c("aut")),
+    person("Zuhaib", "Mahmood", email = "mahmoo21@msu.com", role = c("cre","aut")))
+Imports:
+	ggplot2,
+	dplyr,
+	grid,
+	gridExtra
