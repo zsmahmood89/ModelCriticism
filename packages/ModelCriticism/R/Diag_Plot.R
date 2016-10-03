@@ -99,7 +99,7 @@ DiagPlot <- function(f, y, labels, worstN=10, size_adjust=0,right_margin=7,top_m
 		#Set the parameters for labels
 		##############################
 		yblue<-ifelse(bw==F,'blue','turquoise2')
-		yred<-ifelse(bw==T,'red','red4')
+		yred<-ifelse(bw==F,'red','red4')
 		ycolor<-ifelse(obsy==0,yblue,yred)
 		ypos_text<-ifelse(obsy==0,
 			(y0init+(count0-text_spacing)),
