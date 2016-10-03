@@ -49,9 +49,9 @@ DiagPlot <- function(f, y, labels, worstN=10, size_adjust=0,right_margin=7,top_m
 	labbuffer=(nchar(N)-3)*.3
 	boolcolors<-as.character(c(
 		'1w'='#cddff4', #very light blue
-		'0w'='#0862ca', #bold blue
+		'0w'=ifelse(bw==F,'#0862ca','turquoise2'), #bold blue
 		'1'='#fecfdc', #very light red
-		'0'='#fd1205')) #bold red
+		'0'=ifelse(bw==F,'#fd1205','red4'))) #bold red
 	boolscale<-scale_color_manual(name='coloring',values=boolcolors)
 	###################
 	#initialize plots.
@@ -98,7 +98,7 @@ DiagPlot <- function(f, y, labels, worstN=10, size_adjust=0,right_margin=7,top_m
 		##############################
 		#Set the parameters for labels
 		##############################
-		yblue<-ifelse(bw==F,'blue','#99badd')
+		yblue<-ifelse(bw==F,'blue','turquoise2')
 		yred<-ifelse(bw==T,'red','red4')
 		ycolor<-ifelse(obsy==0,yblue,yred)
 		ypos_text<-ifelse(obsy==0,
