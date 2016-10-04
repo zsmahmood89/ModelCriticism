@@ -106,9 +106,9 @@ BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=3,right_lab_adj
 	
 	boolcolors<-as.character(c(
 		'0'= y0_litecol, #very light blue
-		'0b'=ifelse(bw==F,'#0862ca','turquoise2'), #bold blue
+		'0b'=ifelse(bw==F,'#0862ca','#fee8c8'), #bold blue
 		'1'= y1_litecol, #very light red
-		'1b'=ifelse(bw==F,'#fd1205','red4'))) #bold red
+		'1b'=ifelse(bw==F,'#fd1205','#e34a33'))) #bold red
 	boolscale<-scale_color_manual(name='coloring',values=boolcolors)
 	
 	##############
@@ -180,8 +180,8 @@ BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=3,right_lab_adj
 		}
 		
 		#Coloring for y
-		yblue<-ifelse(bw==F,'blue','turquoise2')
-		yred<-ifelse(bw==F,'red','red4')
+		yblue<-ifelse(bw==F,'blue','#fee8c8')
+		yred<-ifelse(bw==F,'red','#e34a33')
 		ycolor<-ifelse(obsy==0,yblue,yred)	
 		###############################
 		#Create the labels on plot
