@@ -47,11 +47,13 @@ DiagPlot <- function(f, y, labels, worstN=10, size_adjust=0,right_margin=7,top_m
 	pdata<-pdata%>%arrange(forecastOrder)
 	N=nrow(pdata)
 	labbuffer=(nchar(N)-3)*.3
+	yblue=ifelse(bw==F,'#0862ca','#feb24c')
+	yred=ifelse(bw==F,'#fd1205','#e34a33')
 	boolcolors<-as.character(c(
 		'1w'='#cddff4', #very light blue
-		'0w'=ifelse(bw==F,'#0862ca','#fee8c8'), #bold blue
+		'0w'=yblue, #bold blue
 		'1'='#fecfdc', #very light red
-		'0'=ifelse(bw==F,'#fd1205','#e34a33'))) #bold red
+		'0'=yred)) #bold red
 	boolscale<-scale_color_manual(name='coloring',values=boolcolors)
 	###################
 	#initialize plots.
@@ -61,7 +63,7 @@ DiagPlot <- function(f, y, labels, worstN=10, size_adjust=0,right_margin=7,top_m
 	###################
 	o1 <- ggplot(pdata, aes(x=f,y=forecastOrder,group=y, color=as.factor(coloring)))+boolscale
 	o2 <- o1 + geom_point(aes(alpha=(isworstn)))  +geom_rug(side="r")+xlim(c(0,1))+ylim(c(0,N))+theme_bw()+theme(panel.grid.major=element_line(colour='grey'),panel.grid.minor=element_line(colour='grey'),panel.grid.major.y=element_blank(),panel.grid.minor.y=element_blank(),panel.grid.minor.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank(),axis.title.x=element_blank(),legend.position='none',plot.margin=unit(c(top_margin,right_margin,-.2,1),"lines")) +labs(y='Observation (ordered by f)')+boolscale
-	margx<-ggplot(pdata,aes(f,fill=factor(y)))+geom_density(alpha=.4)+scale_fill_manual(values=c('#fee8c8','#e34a33'))+xlim(c(0,1))+labs(x='Forecast Value')+theme_bw()+theme(panel.grid.minor=element_blank(),panel.grid.major=element_blank(),axis.title.y=element_blank(),axis.text.y=element_blank(),axis.ticks.y=element_blank(),legend.position="none",plot.margin=unit(c(0,right_margin,0.2,3.35+labbuffer),"lines"))
+	margx<-ggplot(pdata,aes(f,fill=factor(y)))+geom_density(alpha=.4)+scale_fill_manual(values=c(yblue,yred))+xlim(c(0,1))+labs(x='Forecast Value')+theme_bw()+theme(panel.grid.minor=element_blank(),panel.grid.major=element_blank(),axis.title.y=element_blank(),axis.text.y=element_blank(),axis.ticks.y=element_blank(),legend.position="none",plot.margin=unit(c(0,right_margin,0.2,3.35+labbuffer),"lines"))
 	
 	###################
 	#Lines and Labels
@@ -69,6 +71,8 @@ DiagPlot <- function(f, y, labels, worstN=10, size_adjust=0,right_margin=7,top_m
 	z<-o2
 	count0=0
 	count1=0
+	yblue<-ifelse(bw==F,'blue',yblue)
+	yred<-ifelse(bw==F,'red',yred)
 	for (i in 1:length(pdata$label_worst)) {
 		
 		################################
@@ -98,8 +102,6 @@ DiagPlot <- function(f, y, labels, worstN=10, size_adjust=0,right_margin=7,top_m
 		##############################
 		#Set the parameters for labels
 		##############################
-		yblue<-ifelse(bw==F,'blue','#fee8c8')
-		yred<-ifelse(bw==F,'red','#e34a33')
 		ycolor<-ifelse(obsy==0,yblue,yred)
 		ypos_text<-ifelse(obsy==0,
 			(y0init+(count0-text_spacing)),
