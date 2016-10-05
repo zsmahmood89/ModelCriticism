@@ -47,12 +47,17 @@ DiagPlot <- function(f, y, labels, worstN=10, size_adjust=0,right_margin=7,top_m
 	pdata<-pdata%>%arrange(forecastOrder)
 	N=nrow(pdata)
 	labbuffer=(nchar(N)-3)*.3
+	#Colors for use
 	yblue=ifelse(bw==F,'#0862ca','#feb24c')
+	ybluelite=ifelse(bw==F,'#cddff4','#fee8c8')
+	ybluelitest=ifelse(bw==F,'#f0f5fb','#fefcf9')
 	yred=ifelse(bw==F,'#fd1205','#e34a33')
+	yredlite=ifelse(bw==F,'#fecfdc','#fecfdc')
+	yredlitest=ifelse(bw==F,'#fef0f4','#fef0f4')
 	boolcolors<-as.character(c(
-		'1w'='#cddff4', #very light blue
+		'1w'=ybluelite, #very light blue
 		'0w'=yblue, #bold blue
-		'1'='#fecfdc', #very light red
+		'1'=yredlite, #very light red
 		'0'=yred)) #bold red
 	boolscale<-scale_color_manual(name='coloring',values=boolcolors)
 	###################
@@ -71,8 +76,8 @@ DiagPlot <- function(f, y, labels, worstN=10, size_adjust=0,right_margin=7,top_m
 	z<-o2
 	count0=0
 	count1=0
-	yblue<-ifelse(bw==F,'blue',yblue)
-	yred<-ifelse(bw==F,'red',yred)
+	#yblue<-ifelse(bw==F,'blue',yblue)
+	#yred<-ifelse(bw==F,'red',yred)
 	for (i in 1:length(pdata$label_worst)) {
 		
 		################################
@@ -145,7 +150,7 @@ DiagPlot <- function(f, y, labels, worstN=10, size_adjust=0,right_margin=7,top_m
 			grob=linesGrob(
 				x=c(fpos+.05,.95),
 				y=0,
-				gp=gpar(col=ifelse(obsy==0,'#f0f5fb','#fef0f4'))
+				gp=gpar(col=ifelse(obsy==0,ybluelitest,yredlitest))
 				),
 				ymin=pdata$forecastOrder[i],
 				ymax=pdata$forecastOrder[i]
