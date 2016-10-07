@@ -95,20 +95,27 @@ BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=3,right_lab_adj
 	pdata$coloring[pdata$isbestn_m2_y1==1 | pdata$isbestn_m1_y1==1]<-'1b'
 	pdata$coloring[pdata$isbestn_m2_y1==0 & pdata$isbestn_m1_y1==0 & pdata$y==1]<-'1'
 	
-	
+	#Colors
 	if(transp_adjust==0){
-		y0_litecol<-'#f5f8fc'
-		y1_litecol<-ifelse(rare==TRUE,'#fecdca','fef5fb')
+		y0_litecol<-ifelse(bw==F,'#f5f8fc',"#d8d8d8")
+		yredlite<-ifelse(bw==F,'#fecfdc','#999999')
+		yredliteR<-ifelse(bw==F,'#fd5950','#4c4c4c')
+		y1_litecol<-ifelse(rare==TRUE,yredliteR,yredlite)
 	} else {
-		y0_litecol<-'#cddff4'
-		y1_litecol<-ifelse(rare==TRUE,'#fd5950','#fecfdc')
+		y0_litecol<-ifelse(bw==F,'#cddff4','#f3f3f3')
+		yredlite<-ifelse(bw==F,'#fecfdc','#999999')
+		yredliteR<-ifelse(bw==F,'#fd5950','#4c4c4c')
+		y1_litecol<-ifelse(rare==TRUE,yredliteR,yredlite)
 	}
-	
+	yblue=ifelse(bw==F,'#0862ca','#8b8b8b')
+	yred=ifelse(bw==F,'#fd1205','#000000')
+	ybluelitest=ifelse(bw==F,'#f0f5fb','#f2f2f2')
+	yredlitest=ifelse(bw==F,'#fef0f4','#e5e5e5')
 	boolcolors<-as.character(c(
 		'0'= y0_litecol, #very light blue
-		'0b'=ifelse(bw==F,'#0862ca','#fee8c8'), #bold blue
+		'0b'=yblue, #bold blue
 		'1'= y1_litecol, #very light red
-		'1b'=ifelse(bw==F,'#fd1205','#e34a33'))) #bold red
+		'1b'=yred)) #bold red
 	boolscale<-scale_color_manual(name='coloring',values=boolcolors)
 	
 	##############
@@ -180,8 +187,8 @@ BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=3,right_lab_adj
 		}
 		
 		#Coloring for y
-		yblue<-ifelse(bw==F,'blue','#fee8c8')
-		yred<-ifelse(bw==F,'red','#e34a33')
+		#yblue<-ifelse(bw==F,'blue','#fee8c8')
+		#yred<-ifelse(bw==F,'red','#e34a33')
 		ycolor<-ifelse(obsy==0,yblue,yred)	
 		###############################
 		#Create the labels on plot
@@ -217,7 +224,7 @@ BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=3,right_lab_adj
 			###########################
 			#Decide whether to add horizontal pointer lines
 			###########################
-			hcol<-ifelse(obsy==0,'#cddff4','#fecfdc')
+			hcol<-ifelse(obsy==0,ybluelitest,yredlitest)
 			if(hlines==TRUE){
 				current_fin<-current+
 					annotation_custom(
@@ -343,7 +350,7 @@ BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=3,right_lab_adj
 			########################
 			#Decide whether to add vertical pointer lines
 			########################
-			vcol<-ifelse(obsy==0,'#cddff4','#fecfdc')
+			vcol<-ifelse(obsy==0,ybluelitest,yredlitest)
 			if(vlines==TRUE){
 				current_fin<-current+
 					annotation_custom(
