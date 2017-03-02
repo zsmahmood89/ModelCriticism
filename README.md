@@ -1,6 +1,6 @@
-# R
+# Model Criticism
 
-#Packages
+#Packages (For R)
 
 -RobotModelCriticism
 
