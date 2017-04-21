@@ -131,7 +131,7 @@ BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=3,right_lab_adj
 	###################
 	o1 <- ggplot(pdata, aes(x=forecastOrder1,y=forecastOrder2,color=as.factor(coloring),group=y))+boolscale
 	mart=F
-	o2 <- o1+geom_point(aes(alpha=((transp))))+geom_rug(sides="br")+geom_abline(intercept=0,slope=1)+xlim(c(0,nrow(pdata)))+ylim(c(0,nrow(pdata)))+theme_bw()+theme(plot.title=element_text(size=rel(1)),legend.position='none',plot.margin=unit(c(top_margin,right_margin,bottom_margin,1),'lines'),axis.title.x=element_blank(),axis.ticks.x=element_blank(),axis.text.x=element_blank(),panel.grid.major=element_blank(),panel.grid.minor=element_blank(),axis.ticks.y=element_blank(),axis.text.y=element_blank())+labs(title=m1title,y=m2title)+boolscale
+	o2 <- o1+geom_point(aes(alpha=((transp))))+geom_rug(sides="br")+geom_abline(intercept=0,slope=1)+xlim(c(0,nrow(pdata)))+ylim(c(0,nrow(pdata)))+theme_bw()+theme(plot.title=element_text(size=rel(1)),legend.position='none',plot.margin=unit(c(top_margin,right_margin,bottom_margin,1),'lines'),axis.title.x=element_blank(),axis.ticks.x=element_blank(),axis.text.x=element_blank(),panel.grid.major=element_blank(),panel.grid.minor=element_blank(),axis.ticks.y=element_blank(),axis.text.y=element_blank())+labs(y=m2title)+boolscale+ggtitle(m1title)+theme(plot.title=element_text(hjust=0.5))
 
 	###################
 	#1.		Model 2 bestN
@@ -217,8 +217,8 @@ BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=3,right_lab_adj
 			#need to constrain min & max y to 
 			#	either observed or label position,
 			#	depending on direction of slope
-			ymin=ifelse(y==0,ypos_text,pdata$forecastOrder2[i]),
-			ymax=ifelse(y==0,pdata$forecastOrder2[i],ypos_text),
+			ymin=ifelse(y[i]==0,ypos_text,pdata$forecastOrder2[i]),
+			ymax=ifelse(y[i]==0,pdata$forecastOrder2[i],ypos_text),
 			)
 			
 			###########################
@@ -376,5 +376,4 @@ BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=3,right_lab_adj
 	gt$layout$clip[gt$layout$name == "panel"] <- "off"
 	o3<-arrangeGrob(gt)
 	return(o3)
-
 }
