@@ -28,7 +28,7 @@
 #'
 #'@export
 #'
-BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=10,right_lab_adjust=0.02,bottom_lab_adjust=0.03,right_margin=5,bottom_margin=5,top_margin=1,transp_adjust=10, m1title="Model 1", m2title="Model 2", hlines=TRUE,vlines=TRUE,bw=FALSE,rare=FALSE) {
+BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=3,right_lab_adjust=0.02,bottom_lab_adjust=0.03,right_margin=5,bottom_margin=5,top_margin=1,transp_adjust=1, m1title="Model 1", m2title="Model 2", hlines=TRUE,vlines=TRUE,bw=FALSE,rare=FALSE) {
 	
 	######################
 	#Code
@@ -170,8 +170,8 @@ BicepPlot <- function(f1, f2, y, labels, bestN=10, label_spacing=10,right_lab_ad
 		#	completely horizontal, 
 		#####
 		
-			ypos_text<-yinit+label_spacing
-			count=count+1
+		ypos_text<-yinit+label_spacing
+		count=count+1
 		
 		#####
 		#Determine whether you'll have a negative slope
