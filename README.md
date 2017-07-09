@@ -18,7 +18,7 @@
 
 #### *Citation*
 
-Colaresi, Michael., & Mahmood, Zuhaib. (2017). Do the robot: Lessons from machine learning to improve conflict forecasting. Journal of Peace Research.
+Colaresi, Michael., & Mahmood, Zuhaib. (2017). Do the robot: Lessons from machine learning to improve conflict forecasting. *Journal of Peace Research*, 54(2), 193-214.	
 
 # Usage
 
