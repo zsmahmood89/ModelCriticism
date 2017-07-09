@@ -1,6 +1,6 @@
 # Model Criticism
 
-#Packages (For R)
+# Packages (For R)
 
 -RobotModelCriticism
 
@@ -20,9 +20,9 @@
 
 Colaresi, Michael., & Mahmood, Zuhaib. (2017). Do the robot: Lessons from machine learning to improve conflict forecasting. Journal of Peace Research.
 
-#Usage
+# Usage
 
--ModelCriticism
+### *ModelCriticism*
 
 These plots are very flexibe, with the goal of making it as broadly applicable as possible.
 This means, however, that they require a lot of user input. 
